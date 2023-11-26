@@ -17,10 +17,15 @@ form {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center items horizontally */
 }
 
-label {
-    margin-bottom: 8px;
+h2 {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 input[type="text"] {
@@ -45,9 +50,31 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-p#visitorId {
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
-    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 3rem;
 }
 
 /* Media Queries for responsiveness */

@@ -10,7 +10,7 @@ fpPromise
 // create function to handle displaying the id
 function fillForm(id) {
     visitorId = id;
-    document.getElementById("visitorId").innerHTML = "Visitor ID: " + visitorId;
+    document.getElementById("visitorId").innerHTML = "Visit ID: " + visitorId;
     document.getElementById("visitor_id").value = visitorId;
     // get the ip address
     fetch('https://api.ipify.org?format=json')

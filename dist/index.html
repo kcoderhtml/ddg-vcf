@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>VCard</title>
-    
+    <title>Kieran Klukas - VCard</title>
+
     <script src="/js/min.js"></script>
     <script src="/js/form.js"></script>
 
@@ -11,18 +11,19 @@
 </head>
 
 <body>
-    <!-- the form is for the users name and there is also a hidden protected form that javascript will fill with the visitor_id -->
-    <!-- all fields are required -->
+    <header><h1>Kieran Klukas</h1></header>
+
     <form action="/api/analytics" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
+        <h2>Enter name to download VCard</h2>
         <!-- hidden visitor_id input -->
         <input type="hidden" id="visitor_id" name="visitor_id" value="" required>
         <!-- hidden ip input-->
         <input type="hidden" id="ip" name="ip" value="" required>
-        <p id="visitorId"></p>
+        <input type="text" id="name" name="name" placeholder="Name" required>
         <input type="submit" value="Submit">
     </form>
+
+    <footer id="visitorId"></footer>
 </body>
 
 </html>
