@@ -29,12 +29,12 @@ const handler = async (event) => {
 
     jsonizedForm = urlEncodedFormDataToJson(event.body)
     jsonizedForm['date'] = new Date().toISOString()
-    
+
 		// convert the post request to json
 		const data = { data: jsonizedForm };
 
 		// save the data to fauna
-		const req = await faunaClient.query(q.Create(q.Ref("classes/email"), data));
+		const req = await faunaClient.query(q.Create(q.Ref("classes/usage"), data));
 		console.log(req);
 
 		return {
