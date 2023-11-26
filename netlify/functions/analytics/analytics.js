@@ -796,8 +796,9 @@ PHOTO:data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ
  UfcADk9gzY8tXa8yzPZofU+6ov1Pt2RKHOJc6Lsmv7WG7ylrjUFfUKCnqEhxbglYeoAGq95WJ
  W5YPr9wdd9C/K5QLfLZ9iiHFibkPz09pnjM37T2jr+GZ/ue09pvpc0I6R8TQ0ntOMYm2k9p7Y
  nOJ7TbSb6EvH7nOJvt/c+P6mb09pmZ4P6mf8Abz//2Q==
-URL;TYPE=HOME:https://www.youtube.com/@wanderer.archives
 URL;TYPE=HOME:https://kieranklukas.com
+URL;TYPE=SOCIAL:https://www.youtube.com/@wanderer.archives
+URL;TYPE=SOCIAL:https://scrapbook.hackclub.com/Kieran
 END:VCARD`;
 
 			return vcard;
