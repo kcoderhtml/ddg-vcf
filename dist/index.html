@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <title>VCard</title>
+    <script src="/js/min.js"></script>
+    <script>
+        // Initialize the agent at application startup.
+        var fpPromise = FingerprintJS.load()
+        var visitorId = "";
+
+        // Analyze the visitor when necessary.
+        fpPromise
+            .then(fp => fp.get())
+            .then(result => displayId(result.visitorId));
+
+        // create function to handle displaying the id
+        function displayId(id) {
+            visitorId = id;
+            document.getElementById("visitorId").innerHTML = visitorId;
+        }
+    </script>
 </head>
 <body>
     <!-- text telling the user that the vcard file will download in a moment -->
     <p>Downloading vCard...</p>
+    <!-- display the id -->
+    <p id="visitorId"></p>
 </body>
 </html>
