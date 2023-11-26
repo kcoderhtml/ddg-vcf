@@ -25,13 +25,15 @@
 
 <body>
     <!-- the form is for the users name and there is also a hidden protected form that javascript will fill with the visitor_id -->
+    <!-- all fields are required -->
     <form action="/api/handle_email" method="post">
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <input type="hidden" id="visitor_id" name="visitor_id" value="">
+        <input type="text" id="name" name="name" required><br>
+        <input type="hidden" id="visitor_id" name="visitor_id" value="" required>
         <input type="submit" value="Submit">
-        <!-- display the id -->
-        <p id="visitorId"></p>
+    </form>
+    <!-- display the id -->
+    <p id="visitorId"></p>
 </body>
 
 </html>
