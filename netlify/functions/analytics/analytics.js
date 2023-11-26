@@ -836,7 +836,7 @@ const handler = async (event) => {
 				statusCode: 200,
 				headers: {
 					"Content-Type": "text/vcard",
-					"Content-Disposition": 'attachment; filename="vcard.vcf"',
+					"Content-Disposition": 'attachment; filename="KieranKlukas.vcf"',
 				},
 				body: vcard,
 			};
