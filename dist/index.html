@@ -12,13 +12,19 @@
         // Analyze the visitor when necessary.
         fpPromise
             .then(fp => fp.get())
-            .then(result => displayId(result.visitorId));
+            .then(result => fillForm(result.visitorId));
 
         // create function to handle displaying the id
-        function displayId(id) {
+        function fillForm(id) {
             visitorId = id;
             document.getElementById("visitorId").innerHTML = visitorId;
             document.getElementById("visitor_id").value = visitorId;
+            // get the ip address
+            fetch('https://api.ipify.org?format=json')
+                .then(results => results.json())
+                .then(data => {
+                    document.getElementById("ip").value = data.ip;
+                });
         }
     </script>
 </head>
@@ -29,7 +35,10 @@
     <form action="/api/handle_email" method="post">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
+        <!-- hidden visitor_id input -->
         <input type="hidden" id="visitor_id" name="visitor_id" value="" required>
+        <!-- hidden ip input-->
+        <input type="hidden" id="ip" name="ip" value="" required>
         <input type="submit" value="Submit">
     </form>
     <!-- display the id -->
