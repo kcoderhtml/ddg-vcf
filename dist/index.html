@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>VCard</title>
     <script src="/js/min.js"></script>
@@ -17,13 +18,20 @@
         function displayId(id) {
             visitorId = id;
             document.getElementById("visitorId").innerHTML = visitorId;
+            document.getElementById("visitor_id").value = visitorId;
         }
     </script>
 </head>
+
 <body>
-    <!-- text telling the user that the vcard file will download in a moment -->
-    <p>Downloading vCard...</p>
-    <!-- display the id -->
-    <p id="visitorId"></p>
+    <!-- the form is for the users name and there is also a hidden protected form that javascript will fill with the visitor_id -->
+    <form action="/api/handle_email" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <input type="hidden" id="visitor_id" name="visitor_id" value="">
+        <input type="submit" value="Submit">
+        <!-- display the id -->
+        <p id="visitorId"></p>
 </body>
+
 </html>
