@@ -3,7 +3,7 @@ VERSION:4.0
 N:Klukas;Kieran;;;
 FN:Kieran Klukas
 BDAY:2008-04-27
-EMAIL;TYPE=INTERNET:${email}
+EMAIL;TYPE=INTERNET:{{email}}
 GENDER:male
 NICKNAME:kieran
 PHOTO;ENCODING=BASE64;TYPE=JPEG:{{photo}}

@@ -1,4 +1,4 @@
 # Local Netlify folder
 .netlify
 .DS_Store
-dist/config/output.vcf
+netlify/functions/analytics/output.vcf
