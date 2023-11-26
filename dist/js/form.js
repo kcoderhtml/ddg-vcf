@@ -8,8 +8,14 @@ fpPromise
     .then(result => fillForm(result.visitorId));
 
 // create function to handle displaying the id
+
+/**
+ * Fills the form with the provided visitor ID and retrieves the IP address.
+ * @param {string} id - The visitor ID.
+ */
 function fillForm(id) {
     visitorId = id;
+    // display the id
     document.getElementById("visitorId").innerHTML = "Visit ID: " + visitorId;
     document.getElementById("visitor_id").value = visitorId;
     // get the ip address

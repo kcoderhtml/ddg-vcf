@@ -4,6 +4,12 @@ const faunaClient = new faunadb.Client({
 });
 const q = faunadb.query;
 
+/**
+ * Converts a URL-encoded form data string to a JSON object.
+ *
+ * @param {string} formDataString - The URL-encoded form data string.
+ * @returns {Object} - The JSON object representing the form data.
+ */
 function urlEncodedFormDataToJson(formDataString) {
 	// Split the string into key-value pairs
 	const formDataPairs = formDataString.split("&");
@@ -21,7 +27,12 @@ function urlEncodedFormDataToJson(formDataString) {
 	return formData;
 }
 
-const genEmail = async (visit_id) => {
+/**
+ * Generates a unique email address using the DuckDuckGo API.
+ * @param {string} visit_id - The visit ID associated with the email address.
+ * @returns {Promise<{data: {visit_id: string, email: string}}|{statusCode: number, body: string}>} - A promise that resolves to an object containing the generated email address and visit ID, or an error object if an error occurs.
+ */
+async function genEmail(visit_id) {
 	const url = "https://quack.duckduckgo.com/api/email/addresses";
 	const token = process.env.DUCK_API_SECRET;
 
@@ -51,8 +62,17 @@ const genEmail = async (visit_id) => {
 			body: JSON.stringify({ error: "Internal Server Error" }),
 		};
 	}
-};
+}
 
+/**
+ * Retrieves the email associated with a visit ID from the Fauna database.
+ * If the email is found, it is returned. If not found, a new email is generated,
+ * saved to the database, and returned.
+ *
+ * @param {string} visit_id - The visit ID to retrieve the email for.
+ * @returns {Promise<string>} The email associated with the visit ID.
+ * @throws {Error} If there is an error retrieving or generating the email.
+ */
 async function checkForEmail(visit_id) {
 	try {
 		const query = q.Get(q.Match(q.Index("email_by_visit_id"), visit_id));
@@ -82,6 +102,12 @@ async function checkForEmail(visit_id) {
 	}
 }
 
+/**
+ * Generates a VCard string based on the provided contact information.
+ *
+ * @param {string} visit_id - The visit ID associated with the contact information.
+ * @returns {string} - The generated VCard string.
+ */
 async function genVCard(visit_id) {
 	try {
 		const email = await checkForEmail(visit_id);
@@ -812,6 +838,11 @@ END:VCARD`;
 	}
 }
 
+/**
+ * Handles the incoming HTTP request and performs analytics operations.
+ * @param {Object} event - The event object representing the HTTP request.
+ * @returns {Object} - The response object containing the status code, headers, and body.
+ */
 const handler = async (event) => {
 	try {
 		if (event.httpMethod !== "POST") {
