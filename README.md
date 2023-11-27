@@ -1,3 +1,6 @@
-# DuckDuckGo email dynamic vcard generation
+# DuckDuckGo email dynamic .vcf generation
 
-this repo tracks vcard usage and generates a new email for every new mac address
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/kcoderhtml/ddg-vcard)
+
+This project dynamically generates a .vcf file with a new duck address for each unique hardware id.
+
