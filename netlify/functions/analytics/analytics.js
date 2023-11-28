@@ -5,7 +5,8 @@ const faunaClient = new faunadb.Client({
 const q = faunadb.query;
 const fetch = require("node-fetch");
 
-const VCardTemplate = require("./output.vcf");
+const fs = require("fs");
+const VCardTemplate = fs.readFileSync(`./netlify/functions/analytics/output.vcf`, "utf8");
 
 /**
  * Converts a URL-encoded form data string to a JSON object.
