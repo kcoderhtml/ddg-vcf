@@ -24,7 +24,7 @@ This project dynamically generates a .vcf file with a new duck address for each 
     ```bash
     netlify link
     ```
-6. Connect FaunaDB to your acount by running the commands below and following the prompts (note when Fauna asks for the database name it must be "vcard"):
+6. Connect FaunaDB to your acount by running the commands below and following the prompts:
     ```bash
     netlify addons:create fauna
     netlify addons:auth fauna
