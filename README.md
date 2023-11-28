@@ -37,7 +37,7 @@ This project dynamically generates a .vcf file with a new duck address for each 
     ![photo of network inspector](assets/ddg_api_key.png)
 10. Add the api key to the Netlify environment variables for your site with the name `DUCK_API_SECRET`:
     ![netlify environment variable creation](assets/netlify_environment_variables.png)
-11. Profit! You can add the url of your netlify site to your nfc card and share it with people to give them your contact information while still retaining the privacy of your email and the ability to remotely disable that specific address.
+11. Rebuild the site on netlify and Profit! You can add the url of your netlify site to your nfc card and share it with people to give them your contact information while still retaining the privacy of your email and the ability to remotely disable that specific address.
 
 # License
 This repositories code is licensed with the GNU AFFERO GENERAL PUBLIC LICENSE you can view it [here](LICENSE.md)
