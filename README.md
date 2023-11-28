@@ -9,26 +9,26 @@ This project dynamically generates a .vcf file with a new duck address for each 
 
 1. First you want to create your own copy of the repo by clicking the deploy to netlify button above.
 3. Next configure your details in the [config/template.vcf](config/template.vcf) file. Edit the below lines but don't touch any of the other lines.
-```vcf
-N:Klukas;Kieran;;;
-FN:Kieran Klukas
-BDAY:2008-04-27
-GENDER:male
-NICKNAME:kieran
-URL;TYPE=HOME:https://kieranklukas.com
-URL;TYPE=SOCIAL:https://www.youtube.com/@wanderer.archives
-URL;TYPE=SOCIAL:https://scrapbook.hackclub.com/Kieran
-```
+    ```vcf
+    N:Klukas;Kieran;;;
+    FN:Kieran Klukas
+    BDAY:2008-04-27
+    GENDER:male
+    NICKNAME:kieran
+    URL;TYPE=HOME:https://kieranklukas.com
+    URL;TYPE=SOCIAL:https://www.youtube.com/@wanderer.archives
+    URL;TYPE=SOCIAL:https://scrapbook.hackclub.com/Kieran
+    ```
 4. Change the photo in [config/template.vcf](config/photo.jpeg) to be your own photo. Ensure that it is 320x320px or smaller and it is a jpeg file.
 5. Link your site with netlify with the following command:
-```bash
-netlify link
-```
-6. Connect FaunaDB to your acount by running the commands below and following the prompts.
-```bash
-netlify addons:create fauna
-netlify addons:auth fauna
-```
+    ```bash
+    netlify link
+    ```
+6. Connect FaunaDB to your acount by running the commands below and following the prompts (note when Fauna asks for the database name it must be "vcard"):
+    ```bash
+    netlify addons:create fauna
+    netlify addons:auth fauna
+    ```
 7. Create two collections in Fauna `email_id_pairs` and `usage`
     ![photo of Fauna dashboard](assets/fauna_collections.png)
 8. Create a new index in Fauna named `email_by_visit_id` with the settings shown in the image below:
