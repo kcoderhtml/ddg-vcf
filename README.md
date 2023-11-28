@@ -7,7 +7,7 @@ This project dynamically generates a .vcf file with a new duck address for each 
 
 # Installation
 
-1. First you want to clone the repo. 
+1. First you want to create your own copy of the repo by clicking the deploy to netlify button above. 
 2. Next configure your details in the [config/template.vcf](config/template.vcf) file. Edit the below lines but don't touch any of the other lines.
    ```vcf
    N:Klukas;Kieran;;;
